@@ -10,9 +10,14 @@ class ProbeEnv3(gym.Env):
         self.timestep = 0
 
     def step(self, action):
-        self.state = 1
-        reward = 1
-        done = True
+        if self.state == 0:
+            self.state = 1
+            reward = 0
+            done = False
+        else:
+            reward = 1
+            done = True
+
         info = {}
 
         return self.state, reward, done, info

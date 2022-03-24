@@ -1,5 +1,6 @@
 import gym
 import rl_probe_envs
+import random
 
 def print_step(state, action, next_state, reward, done, timestep):
     print("------------------------------------------")
@@ -13,9 +14,9 @@ def print_step(state, action, next_state, reward, done, timestep):
 
 def experiment_1(verbose=False):
     print("Starting Experiment for Probe Env 1")
-    env1 = gym.make("rl_probe_envs.envs:ProbeEnv1")
+    env1 = gym.make("rl_probe_envs.envs:probe-env-v5")
     state = env1.reset()
-    dummy_action = 0
+    dummy_action = random.randint(0,1)
     next_state, reward, done, _ = env1.step(dummy_action)
     env1.close()
     if verbose:
