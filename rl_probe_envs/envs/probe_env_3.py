@@ -4,7 +4,7 @@ from gym import error, spaces, utils
 
 class ProbeEnv3(gym.Env):
     def __init__(self):
-        self.action_space = 1
+        self.action_space = spaces.Discrete(1)
         self.observation_space = spaces.Discrete(2)
         self.state = 0
         self.timestep = 0
