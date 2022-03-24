@@ -11,7 +11,7 @@ class ProbeEnv5(gym.Env):
         self.rewards = [[-1, 1], [1, -1]]
 
     def step(self, action):
-        state_index = 0 if self.state is -1 else 1
+        state_index = 0 if self.state == -1 else 1
         self.state = self.possible_values[random.randint(0,1)]
         reward = self.possible_values[state_index][action]
         done = True
